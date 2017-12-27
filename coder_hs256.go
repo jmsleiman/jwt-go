@@ -57,11 +57,10 @@ func (hs hs256) Decode(src string, claims Claims) error {
 	if err != nil {
 		return err
 	}
-	/*
-		if err := claims.Valid(); err != nil {
-			return err
-		}
-	*/
+
+	if err := claims.Valid(); err != nil {
+		return err
+	}
 
 	return nil
 }

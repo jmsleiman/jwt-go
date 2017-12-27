@@ -58,11 +58,9 @@ func (rs rs256Decoder) Decode(src string, claims Claims) error {
 		return err
 	}
 
-	/*
-		if err := claims.Valid(); err != nil {
-			return err
-		}
-	*/
+	if err := claims.Valid(); err != nil {
+		return err
+	}
 
 	return nil
 }
